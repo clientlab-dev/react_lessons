@@ -1,5 +1,7 @@
 'use strict'
 
+//https://reactjs.org/docs/handling-events.html
+
 function ListItem(props){
 	return (
 			<div>
