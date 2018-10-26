@@ -28,17 +28,22 @@ class Btn extends React.Component{
 	}
 
 
-	handleClick(){
-		console.log('this', this);
+	handleClick(e){
+		
+
+		this.props.handler(this.state.isToggleOn);
+		
+
 		this.setState(state => ({
 			isToggleOn: !state.isToggleOn
 		}));
-		//this.handler;
+
+		//this.props.handler(this.props.isToggleOn);
 	}
 
 	render(){
 		return(
-			<button onClick={this.props.handler}>
+			<button onClick={this.handleClick}>
 				{this.state.isToggleOn ? 'ON' : 'OFF'}
 			</button>
 		);
@@ -47,14 +52,11 @@ class Btn extends React.Component{
 }
 
 class TodoList extends React.Component{
-
-
-
 	constructor(props) {
 		super(props);
 		this.state = {date: new Date()};
 		this.i = 0;
-
+		this._status = true;
 		this.handler = this.handler.bind(this);
 	}
 
@@ -63,16 +65,11 @@ class TodoList extends React.Component{
 				() => this.tick(),
 				1000
 			);
-			
-			/*var that = this;
-			this.timerID = setInterval(function(){
-				that.tick()
-			},1000);*/
-
 		}
 
 		componentWillUnmount() {
 			clearInterval(this.timerID);
+			this.setState({status:false});
 		}
 
 		tick(i) {
@@ -83,16 +80,19 @@ class TodoList extends React.Component{
 		   });
 		 }
 
-
-		 handler(e) {
-		     //e.preventDefault();
-		     console.log('handler');
-		     this.setState({
-		     	i:"Has stoped"
-		     });
-		     clearInterval(this.timerID);
-		   }
-
+		handler(_status) {
+			if (_status) {
+				this.setState({
+					i: "start"
+				});
+				this.componentDidMount();
+			}else{
+				this.setState({
+					i: "stoped"
+				});
+				clearInterval(this.timerID);
+			}
+		}
 
 	render(){
 		return (
@@ -113,7 +113,9 @@ class TodoList extends React.Component{
 
 
 ReactDOM.render(
-	<TodoList />,
+	<div>
+	<TodoList />
+	</div>,
 	document.getElementById('app')
 );
 /*ReactDOM.render(
