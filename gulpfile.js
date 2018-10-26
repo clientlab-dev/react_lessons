@@ -1,30 +1,52 @@
-var gulp = require('gulp');
-var babel = require('gulp-babel');
-//var eslint       = require('gulp-eslint');
-	//sass = require('gulp-sass'),
-	//concat = require('gulp-concat'),
-	//uglify = require('gulp-uglify'),
-	//cleanCSS = require('gulp-clean-css'),
-	//rename = require('gulp-rename'),
-	//autoprefixer = require('gulp-autoprefixer'),
-	//browserSync = require('browser-sync'),
-	//fileinclude = require('gulp-file-include'),
-	//babel = require('gulp-babel');
+var gulp = require('gulp'),
+  rename = require('gulp-rename'),
+  uglify = require('gulp-uglify'),
+  webpack = require('webpack'),
+  webpackStream = require('webpack-stream');
+  var gutil = require('gulp-util');
+
+gulp.task('webpack', function () {
+  return gulp.src('assets/js/app.js')
+	.pipe(webpackStream({
+	  output: {
+		filename: 'app.js',
+	  },
+	  module: {
+		rules: [
+		  {
+			test: /\.jsx?$/,
+			exclude: /(node_modules)/,
+			//loader: 'babel-loader',
+			loader: 'babel-loader',
+			options: {
+				presets: ['react','es2015']
+			}
+		  }
+		]
+	  },
+	  externals: {
+		jquery: 'jQuery'
+	  }
+	}))
+	//.pipe(gulp.dest('./dist/'))
+	//.pipe(uglify())
+	//.pipe(rename({ suffix: '.min' }))
+	.pipe(gulp.dest('dist/'));
+});
+
+
+gulp.task('js',['webpack'], function () {
+  return gulp.src('dist/app.js')
+	.pipe(uglify())
+	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+	.pipe(rename({ suffix: '.min' }))
+	.pipe(gulp.dest('dist/'));
+});
 
 
 
-	gulp.task('babel', function(){
-		gulp.src('components/**.js')
-		   .pipe(babel({
-				plugins: ['transform-react-jsx'],
-				presets: ['@babel/env']
-			}))
-			.pipe(gulp.dest('dist'))
-	});
-
-
-gulp.task('watch', ['babel'], function () {
-	gulp.watch('components/**.js', ['babel']);
+gulp.task('watch', ['js'], function () {
+	gulp.watch('assets/js/**/**.js', ['js']);
 });
 
 gulp.task('default', ['watch']);

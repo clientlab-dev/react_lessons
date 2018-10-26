@@ -3,32 +3,13 @@
 //https://reactjs.org/docs/handling-events.html
 
 var data = [
-	{
-		name:"Laex",
-		age:18,
-		tel:'12121223233'
-	},
-	{
-		name:"Fill",
-		age:20,
-		tel:'12121223233'
-	},
-	{
-		name:"Mask",
-		age:52,
-		tel:'12121223233'
-	},
-	{
-		name:"Luna",
-		age:33,
-		tel:'12121223233'
-	},
-	{
-		name:"Kate",
-		age:34,
-		tel:'12121223233'
-	},
-]
+  {category: "Sporting Goods", price: "$49.99", stocked: true, name: "Football"},
+  {category: "Sporting Goods", price: "$9.99", stocked: true, name: "Baseball"},
+  {category: "Sporting Goods", price: "$29.99", stocked: false, name: "Basketball"},
+  {category: "Electronics", price: "$99.99", stocked: true, name: "iPod Touch"},
+  {category: "Electronics", price: "$399.99", stocked: false, name: "iPhone 5"},
+  {category: "Electronics", price: "$199.99", stocked: true, name: "Nexus 7"}
+];
 
 
 function ListItem(props){
