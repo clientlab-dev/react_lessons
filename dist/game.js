@@ -18,8 +18,30 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+var data = [{
+  name: "Laex",
+  age: 18,
+  tel: '12121223233'
+}, {
+  name: "Fill",
+  age: 20,
+  tel: '12121223233'
+}, {
+  name: "Mask",
+  age: 52,
+  tel: '12121223233'
+}, {
+  name: "Luna",
+  age: 33,
+  tel: '12121223233'
+}, {
+  name: "Kate",
+  age: 34,
+  tel: '12121223233'
+}];
+
 function ListItem(props) {
-  return React.createElement("div", null, React.createElement("h3", null, props.title), React.createElement("p", null, props.description));
+  return React.createElement("div", null, React.createElement("h3", null, props.title), React.createElement("p", null, props.description), React.createElement("table", null, React.createElement("tbody", null, React.createElement("tr", null, React.createElement("td", null, props.age), React.createElement("td", null, props.tel)))));
 }
 
 var Btn =
@@ -48,7 +70,7 @@ function (_React$Component) {
         return {
           isToggleOn: !state.isToggleOn
         };
-      }); //this.props.handler(this.props.isToggleOn);
+      });
     }
   }, {
     key: "render",
@@ -126,10 +148,19 @@ function (_React$Component2) {
   }, {
     key: "render",
     value: function render() {
-      return React.createElement("div", null, React.createElement(ListItem, {
-        title: this.state.i,
-        description: this.state.date.toLocaleTimeString()
-      }), React.createElement(Btn, {
+      var _this4 = this;
+
+      var listItemsNumbers = [1, 2, 3, 4, 5];
+      var listItems = data.map(function (obj, index) {
+        return React.createElement(ListItem, {
+          key: index,
+          title: obj.name,
+          age: obj.age,
+          tel: obj.tel,
+          description: _this4.state.date.toLocaleTimeString()
+        });
+      });
+      return React.createElement("div", null, listItems, React.createElement(Btn, {
         handler: this.handler
       }));
     }

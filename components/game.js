@@ -2,6 +2,35 @@
 
 //https://reactjs.org/docs/handling-events.html
 
+var data = [
+	{
+		name:"Laex",
+		age:18,
+		tel:'12121223233'
+	},
+	{
+		name:"Fill",
+		age:20,
+		tel:'12121223233'
+	},
+	{
+		name:"Mask",
+		age:52,
+		tel:'12121223233'
+	},
+	{
+		name:"Luna",
+		age:33,
+		tel:'12121223233'
+	},
+	{
+		name:"Kate",
+		age:34,
+		tel:'12121223233'
+	},
+]
+
+
 function ListItem(props){
 	return (
 			<div>
@@ -11,34 +40,39 @@ function ListItem(props){
 				<p>
 				{props.description}
 				</p>
+				<table>
+					<tbody>
+					<tr>
+						<td>
+							{props.age}
+						</td>
+						<td>
+							{props.tel}
+						</td>
+					</tr>
+					</tbody>
+				</table>
 			</div>
 		);
 }
 
 
 class Btn extends React.Component{
-
 	constructor(props){
 		super(props);
 		this.state = {
 			isToggleOn: false
 		}
 		this.handleClick = this.handleClick.bind(this);
-
 	}
 
 
 	handleClick(e){
-		
-
 		this.props.handler(this.state.isToggleOn);
-		
 
 		this.setState(state => ({
 			isToggleOn: !state.isToggleOn
 		}));
-
-		//this.props.handler(this.props.isToggleOn);
 	}
 
 	render(){
@@ -95,9 +129,16 @@ class TodoList extends React.Component{
 		}
 
 	render(){
+
+		var listItemsNumbers = [1,2,3,4,5];
+
+		var listItems = data.map((obj, index) =>{
+			return <ListItem key={index} title={obj.name } age={obj.age} tel={obj.tel} description={this.state.date.toLocaleTimeString()} />
+			}
+		);
 		return (
 			<div>
-				<ListItem title={this.state.i} description={this.state.date.toLocaleTimeString()} />
+				{listItems}
 				<Btn handler = {this.handler} />
 			</div>
 			);
