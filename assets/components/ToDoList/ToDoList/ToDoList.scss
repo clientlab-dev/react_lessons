@@ -1,0 +1,11 @@
+.ToDoList {
+    max-width: 480px;
+    padding: 5px;
+    background: rgba(230, 232, 232, 0.21961);
+    margin: auto;
+    border-radius: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

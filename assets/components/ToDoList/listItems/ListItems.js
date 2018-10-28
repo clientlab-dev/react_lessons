@@ -1,7 +1,7 @@
 import React from 'react';
+import ListItem from '../ListItem/ListItem';
 
-import ListItem from "../ListItem/ListItem";
-
+import styles from './ListItem.scss';
 export default class ListItems extends React.Component{
 	constructor(props){
 		super(props);
@@ -11,14 +11,24 @@ export default class ListItems extends React.Component{
 	}
 
 	render(){
-		var listItems = this.props.listData.map((obj, index) =>{
-			return (
-				<ListItem key={index} text={obj.itemText} id={obj.id} removeHandler= {this.props.removeHandler} />
-				);
-			}
-		);
+
+		if (this.props.listData.length>0) {
+
+			var listItems = this.props.listData.map((obj, index) =>{
+				return (
+					<ListItem key={index} text={obj.itemText} id={obj.id} removeHandler= {this.props.removeHandler} />
+					);
+				}
+			);
+
+			//console.log(this);
+		}else{
+			return (<li className={styles.bareItem}>Add first item</li>);
+		}
+
+
 		return(
-			<div>
+			<div className={styles[this.constructor.name]}>
 				<ul>
 					{listItems}
 				</ul>

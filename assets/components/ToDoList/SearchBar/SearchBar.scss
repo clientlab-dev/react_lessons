@@ -1,0 +1,15 @@
+.SearchBar {
+    padding: 15px;
+
+    input {
+        width: 100%;
+        padding: 4px 8px;
+        border: 1px solid  #9ac3c2;
+        border-radius: 4px;
+        font-size: 14px;
+
+        &:focus {
+            outline: #FFFEEF;
+        }
+    }
+}

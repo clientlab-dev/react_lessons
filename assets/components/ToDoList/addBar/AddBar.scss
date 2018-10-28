@@ -1,0 +1,64 @@
+@keyframes CREATE {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.AddBar {
+    width: 100%;
+    padding: 15px;
+    position: relative;
+
+    textarea {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+
+        //height: 300px;
+        max-height: 500px;
+        min-height: 100px;
+        padding: 4px 8px;
+        font-size: 14px;
+        border: 1px solid  #9ac3c2;
+        border-radius: 4px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .add-btn {
+        position: absolute;
+        right: 26px;
+        bottom: 31px;
+        font-size: 28px;
+        border: none;
+        border-radius: 50%;
+        background: #73de96;
+        display: block;
+        height: 28px;
+        width: 28px;
+        font-size: 0;
+        text-align: center;
+        animation: CREATE .3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #7cefa1;
+        }
+
+        span {
+            font-size: 20px;
+            color: #fff;
+            position: relative;
+            top: -1px;
+            animation: CREATE .5s ease;
+        }
+    }
+}

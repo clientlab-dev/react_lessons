@@ -1,0 +1,17 @@
+.ListItems {
+    display: block;
+    list-style: none;
+    overflow: auto;
+    max-height: 400px;
+
+    ul {
+        padding: 15px;
+    }
+}
+
+.bareItem {
+    color: #b9b9b9;
+    list-style: none;
+    text-align: center;
+    font-size: 14px;
+}

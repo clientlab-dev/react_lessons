@@ -1,4 +1,11 @@
 import React from 'react';
+//import macKeys from "../../../js/vendor/macKeys";
+//macKeys();
+
+import styles from './AddBar.scss'
+
+console.log(styles);
+
 export default class AddBar extends React.Component{
 	constructor(props){
 		super(props);
@@ -33,9 +40,9 @@ export default class AddBar extends React.Component{
 		 this.setState({value: event.target.value});
 	}
 
-	handleKeyUp (event){
 
-		if (event.keyCode===13 &&  event.shiftKey === true) {
+	handleKeyUp (event){
+		if (event.keyCode===13  && event.ctrlKey === true)  {
 			this.addNewItem(this.props);
 		}
 	}
@@ -43,12 +50,12 @@ export default class AddBar extends React.Component{
 	render(){
 		var addBtn = "";
 		if(this.state.value!=''){
-			addBtn = <button onClick={this.addClickHandle} >Add</button>;
+			addBtn = <button className={styles['add-btn']} onClick={this.addClickHandle} ><span>+</span></button>;
 		}
 
 		return(
-			<div>
-				<textarea onKeyUp={this.handleKeyUp} onChange={this.handleChange} value={this.state.value} />
+			<div className={styles[this.constructor.name]}>
+				<textarea placeholder="Type something" onKeyUp={this.handleKeyUp} onChange={this.handleChange} value={this.state.value} />
 				{addBtn}
 			</div>
 		);

@@ -1,0 +1,53 @@
+@keyframes CREATE {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ListItem {
+    display: block;
+    padding: 15px;
+    animation: CREATE .3s ease;
+    white-space: pre;
+    background-color: rgba(110, 200, 184, 0.14118);
+    border-radius: 4px;
+    position: relative;
+    transition: all .3s;
+    font-size: 14px;
+
+    &:hover {
+        background-color: rgba(110, 200, 184, 0.5);
+    }
+
+    & + .ListItem {
+        margin-top: 4px;
+    }
+
+    .remove-btn {
+        position: absolute;
+        bottom: 8px;
+        right: 5px;
+        border: none;
+        border-left: none;
+        color: #ff2d2d;
+        background: none;
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+            color: #ff6a6a;
+        }
+    }
+}
+
+.isDone {
+    text-decoration: line-through;
+    background-color: rgba(212, 212, 212, 0.14118);
+    color: #666;
+}

@@ -5,6 +5,7 @@ import ListItems from "../ListItems/ListItems";
 import AddBar from "../AddBar/AddBar";
 
 
+import styles from './ToDoList.scss'
 export default class ToDoList extends React.Component{
 	constructor(props){
 		super(props);
@@ -41,6 +42,17 @@ export default class ToDoList extends React.Component{
 			this.setState({isShowSearchBar:false})
 		}
 		this.setState({ListItemsFront:this.state.ListItems});
+
+
+
+		console.log(last);
+
+
+		/*scrollToDomRef = () => {
+		       const myDomNode = ReactDOM.findDOMNode(this.state.ListItems)
+		       myDomNode.scrollIntoView()
+		   }*/
+
 	}
 
 	removeHandler(id){
@@ -70,8 +82,9 @@ export default class ToDoList extends React.Component{
 	}
 
 	render(){
+		console.log('this.constructor.name', this.constructor.name);
 		return(
-			<div>
+			<div className={styles[this.constructor.name]}>
 				<SearchBar filterHandler={this.filterHandler}/>
 
 				<ListItems 

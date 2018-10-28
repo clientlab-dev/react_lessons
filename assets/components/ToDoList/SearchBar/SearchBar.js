@@ -1,5 +1,6 @@
 import React from 'react';
 
+import styles from './SearchBar.scss'
 export default class SearchBar extends React.Component{
 	constructor(props){
 		super(props);
@@ -23,8 +24,8 @@ export default class SearchBar extends React.Component{
 	render(){
 		 
 			return(
-				<div>
-					<input value={this.state.value} onChange={this.onChangehandler}/>
+				<div className={styles[this.constructor.name]}>
+					<input placeholder="Search" value={this.state.value} onChange={this.onChangehandler}/>
 				</div>
 			);
 		 

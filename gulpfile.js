@@ -21,7 +21,53 @@ gulp.task('webpack', function () {
 			options: {
 				presets: ['react','es2015']
 			}
-		  }
+		  },
+		    {
+		  	test: /\.s?css$/,
+
+		  	use: [
+		  	       require.resolve('style-loader'),
+		  	       {
+		  	           loader: require.resolve('css-loader'),
+		  	           options: {
+		  	               importLoaders: 1,
+		  	               modules: true,
+		  	               localIdentName: "[name]__[local]___[hash:base64:5]"
+		  	           },
+		  	       },
+		  	       {
+		  	           //loader: require.resolve('postcss-loader'),
+		  	           loader: require.resolve('sass-loader'),
+		  	           options: {
+		  	               // Necessary for external CSS imports to work
+		  	               // https://github.com/facebookincubator/create-react-app/issues/2677
+		  	               ident: 'postcss',
+		  	               plugins: () => [
+		  	                   require('postcss-flexbugs-fixes'),
+		  	                   /*autoprefixer({
+		  	                       browsers: [
+		  	                           '>1%',
+		  	                           'last 4 versions',
+		  	                           'Firefox ESR',
+		  	                           'not ie < 9', // React doesn't support IE8 anyway
+		  	                       ],
+		  	                       flexbox: 'no-2009',
+		  	                   }),*/
+		  	                   require('postcss-modules-values'),
+		  	               ],
+		  	           },
+		  	       },
+		  	   ]
+
+		  	/*exclude: /(node_modules)/,
+		  	//loader: 'babel-loader',
+		  	loader: 'css-loader',
+		  	options: {
+		  		importLoaders: 1,
+		  		modules: true,
+		  		localIdentName: "[name]__[local]___[hash:base64:5]"
+		  	}*/
+		    }
 		]
 	  },
 	  externals: {
@@ -46,7 +92,8 @@ gulp.task('webpack', function () {
 
 
 gulp.task('watch', ['webpack'], function () {
-	gulp.watch('assets/js/**/**.js', ['webpack']);
+	gulp.watch('assets/components/**/**.js', ['webpack']);
+	gulp.watch('assets/components/**/**.scss', ['webpack']);
 });
 
 gulp.task('default', ['watch']);
