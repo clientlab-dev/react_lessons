@@ -25,7 +25,7 @@ gulp.task('webpack', function () {
 		]
 	  },
 	  externals: {
-		jquery: 'jQuery'
+		//jquery: 'jQuery'
 	  }
 	}))
 	//.pipe(gulp.dest('./dist/'))
@@ -35,18 +35,18 @@ gulp.task('webpack', function () {
 });
 
 
-gulp.task('js',['webpack'], function () {
+/*gulp.task('js',['webpack'], function () {
   return gulp.src('dist/app.js')
-	.pipe(uglify())
-	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-	.pipe(rename({ suffix: '.min' }))
+	//.pipe(uglify())
+	//.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+	//.pipe(rename({ suffix: '.min' }))
 	.pipe(gulp.dest('dist/'));
-});
+});*/
 
 
 
-gulp.task('watch', ['js'], function () {
-	gulp.watch('assets/js/**/**.js', ['js']);
+gulp.task('watch', ['webpack'], function () {
+	gulp.watch('assets/js/**/**.js', ['webpack']);
 });
 
 gulp.task('default', ['watch']);
