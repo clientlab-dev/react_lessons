@@ -9,11 +9,11 @@ export default class AddBar extends React.Component{
 		this.handleKeyUp = this.handleKeyUp.bind(this);
 
 		this.state = {value: ''};
+
 	}
 
 
-	addNewItem(props){
-
+	addNewItem(event){
 		if (this.state.value!='') {
 			var id = this.props.listData.length+1;
 			this.props.addHandel({

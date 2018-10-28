@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ListItem from "./ListItem";
+import ListItem from "../ListItem/ListItem";
 
 export default class ListItems extends React.Component{
 	constructor(props){
@@ -8,25 +8,12 @@ export default class ListItems extends React.Component{
 	}
 
 	componentDidMount() {
-		this.timerID = setInterval(
-			() => this.tick(),
-			1000
-		);
-
-		//console.log(this.props);
 	}
 
-
-	tick(i) {
-			this.setState({});
-		}
-
-
 	render(){
-
 		var listItems = this.props.listData.map((obj, index) =>{
 			return (
-				<ListItem key={index} text={obj.itemText} id={obj.id} />
+				<ListItem key={index} text={obj.itemText} id={obj.id} removeHandler= {this.props.removeHandler} />
 				);
 			}
 		);

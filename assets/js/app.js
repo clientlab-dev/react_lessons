@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
-import ToDoList from "./components/ToDoList/ToDoList";
+import ToDoList from "../components/ToDoList/ToDoList/ToDoList";
 
 
 

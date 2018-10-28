@@ -7,18 +7,14 @@ export default class ListItems extends React.Component{
 	}
 
 
-	removeHandler(event){
-		console.log(event);
-		console.log(this.props);
+	removeHandler(props){
+		this.props.removeHandler(this.props.id);
 	}
 
 	render(){
-
-//		console.log(this.props.removeHandler);
 		return(
 			<li>
 				{this.props.text}
-
 				<button onClick={this.removeHandler}>Remove</button>
 			</li>
 		);
