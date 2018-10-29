@@ -23659,8 +23659,6 @@ var ListItems = function (_React$Component) {
 				var listItems = this.props.listData.map(function (obj, index) {
 					return _react2.default.createElement(_ListItem2.default, { key: index, text: obj.itemText, id: obj.id, removeHandler: _this2.props.removeHandler });
 				});
-
-				//console.log(this);
 			} else {
 				return _react2.default.createElement(
 					'li',
@@ -23826,7 +23824,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "@keyframes ListItem__CREATE___3u4Ej {\n  0% {\n    opacity: 0;\n    transform: translateY(30px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0); } }\n\n.ListItem__ListItem___1SwCW {\n  display: block;\n  padding: 15px;\n  animation: ListItem__CREATE___3u4Ej .3s ease;\n  white-space: pre;\n  background-color: rgba(110, 200, 184, 0.14118);\n  border-radius: 4px;\n  position: relative;\n  transition: all .3s;\n  font-size: 14px; }\n  .ListItem__ListItem___1SwCW:hover {\n    background-color: rgba(110, 200, 184, 0.5); }\n  .ListItem__ListItem___1SwCW + .ListItem__ListItem___1SwCW {\n    margin-top: 4px; }\n  .ListItem__ListItem___1SwCW .ListItem__remove-btn___3O110 {\n    position: absolute;\n    bottom: 8px;\n    right: 5px;\n    border: none;\n    border-left: none;\n    color: #ff2d2d;\n    background: none;\n    text-decoration: underline;\n    cursor: pointer; }\n    .ListItem__ListItem___1SwCW .ListItem__remove-btn___3O110:hover {\n      color: #ff6a6a; }\n\n.ListItem__isDone___1UJBI {\n  text-decoration: line-through;\n  background-color: rgba(212, 212, 212, 0.14118);\n  color: #666; }\n", ""]);
+exports.push([module.i, "@keyframes ListItem__CREATE___3u4Ej {\n  0% {\n    opacity: 0;\n    transform: translateY(30px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0); } }\n\n.ListItem__ListItem___1SwCW {\n  display: block;\n  padding: 15px;\n  animation: ListItem__CREATE___3u4Ej .3s ease;\n  white-space: pre;\n  background-color: rgba(110, 200, 184, 0.14118);\n  border-radius: 4px;\n  position: relative;\n  transition: all .3s;\n  font-size: 14px; }\n  .ListItem__ListItem___1SwCW:hover {\n    background-color: rgba(110, 200, 184, 0.5); }\n  .ListItem__ListItem___1SwCW + .ListItem__ListItem___1SwCW {\n    margin-top: 4px; }\n  .ListItem__ListItem___1SwCW .ListItem__remove-btn___3O110 {\n    position: absolute;\n    bottom: 8px;\n    right: 5px;\n    border: none;\n    border-left: none;\n    color: #ff2d2d;\n    background: none;\n    text-decoration: underline;\n    cursor: pointer; }\n    .ListItem__ListItem___1SwCW .ListItem__remove-btn___3O110:hover {\n      color: #ff6a6a; }\n\n.ListItem__isDone___1UJBI {\n  text-decoration: line-through;\n  background-color: rgba(212, 212, 212, 0.14118);\n  color: #666;\n  opacity: 0.6; }\n", ""]);
 
 // exports
 exports.locals = {

@@ -20,8 +20,6 @@ export default class ListItems extends React.Component{
 					);
 				}
 			);
-
-			//console.log(this);
 		}else{
 			return (<li className={styles.bareItem}>Add first item</li>);
 		}
