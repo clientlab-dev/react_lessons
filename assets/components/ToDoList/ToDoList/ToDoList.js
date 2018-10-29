@@ -45,7 +45,7 @@ export default class ToDoList extends React.Component{
 
 
 
-		console.log(last);
+		//console.log(last);
 
 
 		/*scrollToDomRef = () => {

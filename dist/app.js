@@ -23315,7 +23315,8 @@ var ToDoList = function (_React$Component) {
 			}
 			this.setState({ ListItemsFront: this.state.ListItems });
 
-			console.log(last);
+			//console.log(last);
+
 
 			/*scrollToDomRef = () => {
           const myDomNode = ReactDOM.findDOMNode(this.state.ListItems)
@@ -23933,7 +23934,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 //import macKeys from "../../../js/vendor/macKeys";
 //macKeys();
 
-console.log(_AddBar2.default);
+//console.log(styles);
 
 var AddBar = function (_React$Component) {
 	_inherits(AddBar, _React$Component);
@@ -24071,7 +24072,7 @@ exports = module.exports = __webpack_require__(2)(false);
 
 
 // module
-exports.push([module.i, "@keyframes AddBar__CREATE___vMNsa {\n  0% {\n    opacity: 0;\n    transform: translateY(30px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0); } }\n\n.AddBar__AddBar___2y0aM {\n  width: 100%;\n  padding: 15px;\n  position: relative; }\n  .AddBar__AddBar___2y0aM textarea {\n    width: 100%;\n    max-width: 100%;\n    min-width: 100%;\n    max-height: 500px;\n    min-height: 100px;\n    padding: 4px 8px;\n    font-size: 14px;\n    border: 1px solid  #9ac3c2;\n    border-radius: 4px; }\n    .AddBar__AddBar___2y0aM textarea:focus {\n      outline: none; }\n  .AddBar__AddBar___2y0aM .AddBar__add-btn___F-eyd {\n    position: absolute;\n    right: 26px;\n    bottom: 31px;\n    font-size: 28px;\n    border: none;\n    border-radius: 50%;\n    background: #73de96;\n    display: block;\n    height: 28px;\n    width: 28px;\n    font-size: 0;\n    text-align: center;\n    animation: AddBar__CREATE___vMNsa .3s ease;\n    cursor: pointer; }\n    .AddBar__AddBar___2y0aM .AddBar__add-btn___F-eyd:hover {\n      background-color: #7cefa1; }\n    .AddBar__AddBar___2y0aM .AddBar__add-btn___F-eyd span {\n      font-size: 20px;\n      color: #fff;\n      position: relative;\n      top: -1px;\n      animation: AddBar__CREATE___vMNsa .5s ease; }\n", ""]);
+exports.push([module.i, "@keyframes AddBar__CREATE___vMNsa {\n  0% {\n    opacity: 0;\n    transform: translateY(30px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0); } }\n\n.AddBar__AddBar___2y0aM {\n  width: 100%;\n  padding: 15px;\n  position: relative; }\n  .AddBar__AddBar___2y0aM textarea {\n    width: 100%;\n    max-width: 100%;\n    min-width: 100%;\n    max-height: 500px;\n    min-height: 100px;\n    padding: 4px 8px;\n    font-size: 14px;\n    border: 1px solid  #9ac3c2;\n    border-radius: 4px;\n    font-family: Arial; }\n    .AddBar__AddBar___2y0aM textarea:focus {\n      outline: none; }\n  .AddBar__AddBar___2y0aM .AddBar__add-btn___F-eyd {\n    position: absolute;\n    right: 26px;\n    bottom: 31px;\n    font-size: 28px;\n    border: none;\n    border-radius: 50%;\n    background: #73de96;\n    display: block;\n    height: 28px;\n    width: 28px;\n    font-size: 0;\n    text-align: center;\n    animation: AddBar__CREATE___vMNsa .3s ease;\n    cursor: pointer; }\n    .AddBar__AddBar___2y0aM .AddBar__add-btn___F-eyd:hover {\n      background-color: #7cefa1; }\n    .AddBar__AddBar___2y0aM .AddBar__add-btn___F-eyd span {\n      font-size: 20px;\n      color: #fff;\n      position: relative;\n      top: -1px;\n      animation: AddBar__CREATE___vMNsa .5s ease; }\n", ""]);
 
 // exports
 exports.locals = {

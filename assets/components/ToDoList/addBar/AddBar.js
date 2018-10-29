@@ -4,7 +4,7 @@ import React from 'react';
 
 import styles from './AddBar.scss'
 
-console.log(styles);
+//console.log(styles);
 
 export default class AddBar extends React.Component{
 	constructor(props){
@@ -29,6 +29,7 @@ export default class AddBar extends React.Component{
 			});
 			this.setState({value: ''});
 		}
+		
 
 	}
 
