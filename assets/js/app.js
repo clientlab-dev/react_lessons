@@ -4,16 +4,19 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 
+
+
 import ToDoList from "../components/ToDoList/ToDoList/ToDoList";
 
 
+//debugger;
+
+window.toDoList = "";
 
 
-
-
-ReactDOM.render(
-	<ToDoList />,
-	document.getElementById('app')
-);
+window.toDoList = ReactDOM.render(
+		<ToDoList />,
+		document.getElementById('app')
+	);
 
 

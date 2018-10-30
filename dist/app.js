@@ -1085,7 +1085,12 @@ var _ToDoList2 = _interopRequireDefault(_ToDoList);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_ToDoList2.default, null), document.getElementById('app')); //import macKeys from "./vendor/macKeys.js";
+//debugger;
+
+window.toDoList = ""; //import macKeys from "./vendor/macKeys.js";
+
+
+window.toDoList = _reactDom2.default.render(_react2.default.createElement(_ToDoList2.default, null), document.getElementById('app'));
 
 /***/ }),
 /* 9 */
@@ -23282,11 +23287,13 @@ var ToDoList = function (_React$Component) {
 		_this.addNewItem = _this.addNewItem.bind(_this);
 		_this.removeHandler = _this.removeHandler.bind(_this);
 		_this.filterHandler = _this.filterHandler.bind(_this);
+		_this._setState = _this._setState.bind(_this);
 
 		_this.state = {
 			ListItems: [],
 			ListItemsFront: [],
-			isShowSearchBar: false
+			isShowSearchBar: false,
+			greating: "Add first item!!!"
 		};
 
 		//this.ListItemsBk = '';
@@ -23297,6 +23304,11 @@ var ToDoList = function (_React$Component) {
 		key: "componentDidMount",
 		value: function componentDidMount() {
 			this.setState({ ListItemsFront: this.state.ListItems });
+		}
+	}, {
+		key: "_setState",
+		value: function _setState(stateObj) {
+			this.setState(stateObj);
 		}
 	}, {
 		key: "addNewItem",
@@ -23353,14 +23365,15 @@ var ToDoList = function (_React$Component) {
 	}, {
 		key: "render",
 		value: function render() {
-			console.log('this.constructor.name', this.constructor.name);
+
 			return _react2.default.createElement(
 				"div",
 				{ className: _ToDoList2.default[this.constructor.name] },
 				_react2.default.createElement(_SearchBar2.default, { filterHandler: this.filterHandler }),
 				_react2.default.createElement(_ListItems2.default, {
 					listData: this.state.ListItemsFront,
-					removeHandler: this.removeHandler }),
+					removeHandler: this.removeHandler,
+					greating: this.state.greating }),
 				_react2.default.createElement(_AddBar2.default, {
 					addHandel: this.addNewItem,
 					listData: this.state.ListItems })
@@ -23660,10 +23673,11 @@ var ListItems = function (_React$Component) {
 					return _react2.default.createElement(_ListItem2.default, { key: index, text: obj.itemText, id: obj.id, removeHandler: _this2.props.removeHandler });
 				});
 			} else {
+				console.log(this.props);
 				return _react2.default.createElement(
 					'li',
 					{ className: _ListItem4.default.bareItem },
-					'Add first item'
+					this.props.greating
 				);
 			}
 

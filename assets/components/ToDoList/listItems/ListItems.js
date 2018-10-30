@@ -1,6 +1,7 @@
 import React from 'react';
 import ListItem from '../ListItem/ListItem';
 
+
 import styles from './ListItem.scss';
 export default class ListItems extends React.Component{
 	constructor(props){
@@ -21,7 +22,8 @@ export default class ListItems extends React.Component{
 				}
 			);
 		}else{
-			return (<li className={styles.bareItem}>Add first item</li>);
+			console.log(this.props);
+			return (<li className={styles.bareItem}>{this.props.greating}</li>);
 		}
 
 

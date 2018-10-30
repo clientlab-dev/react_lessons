@@ -13,11 +13,14 @@ export default class ToDoList extends React.Component{
 		this.addNewItem = this.addNewItem.bind(this);
 		this.removeHandler = this.removeHandler.bind(this);
 		this.filterHandler = this.filterHandler.bind(this);
+		this._setState = this._setState.bind(this);
+
 
 		this.state = {
 			ListItems:[],
 			ListItemsFront:[],
-			isShowSearchBar: false
+			isShowSearchBar: false,
+			greating: "Add first item!!!"
 		};
 		
 		//this.ListItemsBk = '';
@@ -25,6 +28,11 @@ export default class ToDoList extends React.Component{
 
 	componentDidMount() {
 		this.setState({ListItemsFront:this.state.ListItems})
+	}
+
+
+	_setState(stateObj){
+		this.setState(stateObj);
 	}
 
 
@@ -82,14 +90,16 @@ export default class ToDoList extends React.Component{
 	}
 
 	render(){
-		console.log('this.constructor.name', this.constructor.name);
+		
+
 		return(
 			<div className={styles[this.constructor.name]}>
 				<SearchBar filterHandler={this.filterHandler}/>
 
 				<ListItems 
 					listData={this.state.ListItemsFront} 
-					removeHandler={this.removeHandler}/>
+					removeHandler={this.removeHandler}
+					greating={this.state.greating}/>
 				<AddBar 
 					addHandel={this.addNewItem} 
 					listData={ this.state.ListItems}/>
